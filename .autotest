@@ -1,6 +1,7 @@
+require '/Users/jamieflournoy/autotest/sound/sound'
+Autotest::Sound.sound_app = '/opt/local/bin/mpg321'
+Autotest::Sound.sound_path = "/Users/jamieflournoy/autotest/sound/sound_fx/"
+
 Autotest.add_hook :initialize do |autotest|
     ['.svn','.hg','.git'].each { |exception| autotest.add_exception(exception) }
-#    autotest.add_mapping(/^test.*\/.*_test\.rb$/) do |filename, _|
-#        filename
-#    end
 end
