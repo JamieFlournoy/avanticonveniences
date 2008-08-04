@@ -1,6 +1,14 @@
 require 'rubygems'
-gem 'text-hyphen'
+
+# Note: Text::Hyphen 1.0.0 uses attr_accessor in a couple of places
+# where it should use attr_reader, because a setter is defined 
+# immediately afterward; this causes 'method redefined' warnings
+# when running 'rake test' since the Hoe gem enables the ruby -w flag.
+# To fix this warning, Text::Hyphen must be fixed. so...
+# TODO patch Text::Hyphen to fix the 'method redefined' warnings.
+gem 'text-hyphen', '>= 1.0.0'
 require 'text/hyphen'
+
 
 class TextFormatter
     # Replace all words longer than max_width with the results of split_word.
@@ -56,5 +64,4 @@ class TextFormatter
         @@hyphenators[language_code] ||= Text::Hyphen.new(:language => language_code, :left => 2, :right => 2)
         return @@hyphenators[language_code]
     end
-
 end

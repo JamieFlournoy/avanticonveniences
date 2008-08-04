@@ -1,5 +1,5 @@
 require 'rubygems'
-gem 'activesupport'
+gem 'activesupport', '>= 1.2.6'
 require 'active_support/core_ext/string' # for titleize
 
 class String
