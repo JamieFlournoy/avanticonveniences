@@ -9,4 +9,8 @@ Hoe.new('AvantiConveniences', AvantiConveniences::VERSION) do |p|
   p.test_globs.push 'test/**/*_test.rb'
 end
 
+task :rcov do
+   sh 'rcov test/*_test.rb'
+end
+
 # vim: syntax=Ruby

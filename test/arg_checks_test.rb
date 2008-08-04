@@ -1,3 +1,4 @@
+require 'test/unit'
 require File.dirname(__FILE__) + '/../lib/arg_checks'
 
 class ArgChecksTest < Test::Unit::TestCase
@@ -14,9 +15,14 @@ class ArgChecksTest < Test::Unit::TestCase
   end
 
   def test_arg_required
-    assert_raise(ArgumentError) { arg_dummy(nil, nil) }
-    assert_raise(ArgumentError) { arg_dummy(nil, 3.0) }
-    assert_raise(ArgumentError) { arg_dummy('blah', nil) }
+    assert_raise(ArgumentError) { arg_dummy5(nil, nil) }
+    assert_raise(ArgumentError) { arg_dummy5(nil, 3.0) }
+    assert_raise(ArgumentError) { arg_dummy5('blah', nil) }
+    assert_nothing_raised(ArgumentError) { arg_dummy5('blah', 3.0) }
+  end
+  
+  def arg_dummy5(arg1, arg2)
+      arg_required arg1, arg2
   end
 
   def arg_dummy(arg1_string, arg2_float)

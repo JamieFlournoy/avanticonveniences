@@ -2,4 +2,6 @@ doc/
 *~
 avanti_conveniences.tmproj
 log/*.log
-**/.DS_Store
+.DS_Store
+*/.DS_Store
+coverage/

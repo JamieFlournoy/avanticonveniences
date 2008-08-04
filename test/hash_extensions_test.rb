@@ -1,3 +1,4 @@
+require 'test/unit'
 require File.dirname(__FILE__) + '/../lib/hash_extensions'
 
 class HashExtensionsTest < Test::Unit::TestCase

@@ -1,6 +1,9 @@
-# this code depends on hash_extensions for Hash.rekey.
+gem 'activesupport'
+require 'active_support/core_ext/hash/indifferent_access'
 
 require 'uri'
+require File.dirname(__FILE__) + '/hash_extensions'
+
 class URI::Generic
     def Generic.query_from_hash(q_hash)
         return '' if q_hash.nil?
@@ -12,6 +15,5 @@ class URI::Generic
         pairs = []
         q_hash.each_pair{|k,v| pairs << "#{k}=#{URI.escape(v.to_s)}" unless v.nil?}
         '?' + pairs.sort.join('&')
-
     end
 end
