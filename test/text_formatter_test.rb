@@ -1,7 +1,7 @@
 require 'test/unit'
 require File.dirname(__FILE__) + '/../lib/text_formatter'
 
-class TextFormatterTest < Test::Unit::TestCase
+class TestTextFormatter < Test::Unit::TestCase
     def setup
         @tf = TextFormatter.new
     end   

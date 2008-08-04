@@ -1,4 +1,7 @@
+require 'rubygems'
+gem 'text-hyphen'
 require 'text/hyphen'
+
 class TextFormatter
     # Replace all words longer than max_width with the results of split_word.
     # Leading and trailing whitespace is eliminated and inline whitespace runs are replaced with a space.
