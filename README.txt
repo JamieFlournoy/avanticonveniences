@@ -1,6 +1,7 @@
 = AvantiConveniences
 
 http://www.pervasivecode.com/blog/avanticonveniences/
+Author: Jamie Flournoy (jamie@pervasivecode.com)
 
 == DESCRIPTION:
 
@@ -26,8 +27,8 @@ query string from a Hash.
 == SYNOPSIS:
 
 See individual classes for details. All of them are single method invocations
-that are very simple to use, except for TextFormatter which must be instantiated
-first.
+that are very simple to use. For additional examples look in the test/
+directory.
 
 == REQUIREMENTS:
 
