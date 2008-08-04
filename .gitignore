@@ -1,7 +1,7 @@
-doc/
 *~
-avanti_conveniences.tmproj
-log/*.log
 .DS_Store
-*/.DS_Store
+avanti_conveniences.tmproj
 coverage/
+doc/
+log/*.log
+pkg/

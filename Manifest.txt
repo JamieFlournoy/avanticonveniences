@@ -2,6 +2,15 @@ History.txt
 Manifest.txt
 README.txt
 Rakefile
-bin/avanti_conveniences
+lib/arg_checks.rb
 lib/avanti_conveniences.rb
+lib/hash_extensions.rb
+lib/string_extensions.rb
+lib/text_formatter.rb
+lib/uri_extensions.rb
+test/test_arg_checks.rb
 test/test_avanti_conveniences.rb
+test/test_hash_extensions.rb
+test/test_string_extensions.rb
+test/test_text_formatter.rb
+test/test_uri_extensions.rb
