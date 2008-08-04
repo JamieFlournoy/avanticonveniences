@@ -4,7 +4,7 @@ class TextFormatter
     # Leading and trailing whitespace is eliminated and inline whitespace runs are replaced with a space.
     def split_long_words(string, max_width, language_code)
         words = string.split
-        words.collect{|w| w.length > max_width ? split_word(w, max_width, language_code) : w}.flatten.join(' ')
+        words.collect{|w| w.length > max_width ? split_word(w, max_width, language_code, false) : w}.flatten.join(' ')
     end
     
     # Split one word and return it as an array of substrings no longer than the specified size.

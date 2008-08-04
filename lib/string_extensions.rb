@@ -9,4 +9,3 @@ class String
     def single_quote; return self.quote("'"); end
     def double_quote; return self.quote('"'); end
 end
-
