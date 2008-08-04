@@ -8,15 +8,31 @@ AvantiConveniences is a set of convenience code for Ruby on Rails applications.
 
 == FEATURES/PROBLEMS:
 
-* FIX (list of features or problems)
+ArgChecks helps you implement simple sanity-checking of arguments, like
+permanent assertions or a poor man's Design by Contract facility, so you can
+write code that will Fail Fast (see http://c2.com/cgi/wiki?FailFast).
+
+HashExtensions currently just adds the Hash#rekey method.
+
+StringExtensions provides String quoting (not escaping) with single quotes,
+double quotes, or a caller-specified quoting character, and a String#dehumanize
+method to do the reverse of the String#humanize method provided by ActiveSupport.
+
+TextFormatter provides methods for hyphenating words for word-wrapping.
+
+URIExtensions provides URI::Generic#query_from_hash, which will create a URI
+query string from a Hash.
 
 == SYNOPSIS:
 
-  FIX (code sample of usage)
+See individual classes for details. All of them are single method invocations
+that are very simple to use, except for TextFormatter which must be instantiated
+first.
 
 == REQUIREMENTS:
 
-Ruby on Rails (definitely works with 2.1.0, may work with earlier or later revisions)
+Ruby 1.8.5 (might work with earlier versions), ActiveSupport 1.2.6, Text-Hyphen
+1.0.0, and Hoe 1.7.0.
 
 == INSTALL:
 

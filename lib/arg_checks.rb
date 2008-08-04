@@ -1,16 +1,22 @@
+# Include this module in your classes that need sanity checking of method arguments.
+# If any of these checks is not satisfied, it will raise an ArgumentError with a
+# detailed message about what went wrong.
 module ArgChecks
-    # Require that all arguments be of the specified class, or one of its subclasses
+    # Require that all arguments be of the specified class, or one of its subclasses.
+    #
+    # Note: it's preferable to use respond_to? (or similar) instead of is_a? or kind_of? when possible,
+    # to facilitate looser coupling of objects (by protocol rather than by type).
     def arg_type(klass, *args)
         raise ArgumentError, "First argument must be a class. Got #{klass.to_s}" unless klass.is_a? Class
         args.each{|obj| raise ArgumentError, "Wrong type for argument (should be #{klass})" unless obj.is_a? klass }
     end
   
-    # Require that all arguments be non-nil
+    # Require that all arguments be non-nil.
     def arg_required(*args)
         args.each{|obj| raise ArgumentError, "Argument cannot be nil" if obj.nil? }
     end
     
-    # Require that the second argument, be non-nil. Upon failure the first argument is used in the error message.
+    # Require that the second argument be non-nil. Upon failure the first argument is used in the error message.
     def named_arg_required(name, obj)
         named_arg_required('name', name) unless name.eql?('name')
         raise ArgumentError, "Argument \"#{name}\" cannot be nil" if obj.nil?
@@ -22,17 +28,17 @@ module ArgChecks
         raise ArgumentError, "Nil argument not allowed in #{keys_with_nil_values.join(', ')}" unless keys_with_nil_values.empty?
     end
     
-    # Require that all arguments be greater than or equal to max
+    # Require that all arguments be greater than or equal to max.
     def arg_max(max, *args)
         args.each{|obj| raise ArgumentError, "Argument exceeds maxmimum value (max is #{max.to_s})" unless max >= obj}
     end
     
-    # Require that all arguments be less than or equal to min
+    # Require that all arguments be less than or equal to min.
     def arg_min(min, *args)
         args.each{|obj| raise ArgumentError, "Argument is lower than minimum value (min is #{min.to_s})" unless min <= obj }
     end
 
-    # Require that all arguments return a set of keys containing at least the specified elements
+    # Require that all arguments return a set of keys containing at least the specified elements.
     def arg_hash_keys_required(required_keys, *args)
         args.each do |h|
             missing = required_keys - h.keys
@@ -40,7 +46,7 @@ module ArgChecks
         end
     end
 
-    # Require that all arguments return a set of keys containing exactly the specified elements
+    # Require that all arguments return a set of keys containing exactly the specified elements.
     def arg_hash_keys_exact(exact_keys, *args)
         args.each do |h|
             missing = exact_keys - h.keys
@@ -51,7 +57,7 @@ module ArgChecks
         end
     end
 
-    # Require that all arguments return a set of keys containing a set of required keys, zero or more of the optional keys, and nothing else
+    # Require that all arguments return a set of keys containing a set of required keys, zero or more of the optional keys, and nothing else.
     def arg_hash_keys_limit(required_keys, optional_keys, *args)
         args.each do |h|
           missing = required_keys - h.keys

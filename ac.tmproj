@@ -10,7 +10,9 @@
 			<key>name</key>
 			<string>AvantiConveniences</string>
 			<key>regexFolderFilter</key>
-			<string>!.*/(\.[^/]*|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle))$</string>
+			<string>!doc|coverage|.*/(\.[^/]*|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle))$</string>
+			<key>selected</key>
+			<true/>
 			<key>sourceDirectory</key>
 			<string></string>
 		</dict>
@@ -22,6 +24,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{10, 0}, {1485, 1178}}</string>
+	<string>{{3, 0}, {1485, 1178}}</string>
 </dict>
 </plist>

@@ -6,7 +6,10 @@ require 'uri'
 require File.dirname(__FILE__) + '/hash_extensions'
 
 class URI::Generic
-    def Generic.query_from_hash(q_hash)
+    # Create a URI query string from a Hash. The keys in the returned query string
+    # are sorted for easier testing.
+    # Example: {:foo => 'bar', :biz => 'b a z'} -> '?biz=b%20a%20z&foo=bar'
+    def self.query_from_hash(q_hash)
         return '' if q_hash.nil?
 
         # Reveal cases where the caller thought they were using HashWithIndifferentAccess

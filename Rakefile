@@ -13,4 +13,9 @@ task :rcov do
     sh 'rcov test/test_*.rb'
 end
 
+task :clean_rcov do
+    sh 'rm -rf ./coverage/*'
+end
+task :clean => [:clean_rcov]
+
 # vim: syntax=Ruby

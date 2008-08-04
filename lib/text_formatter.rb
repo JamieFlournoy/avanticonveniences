@@ -9,7 +9,8 @@ require 'rubygems'
 gem 'text-hyphen', '>= 1.0.0'
 require 'text/hyphen'
 
-
+# Several methods take a language_code argument. This is the language code
+# (like 'en_us') required by Text::Hyphen.
 class TextFormatter
     # Replace all words longer than max_width with the results of split_word.
     # Leading and trailing whitespace is eliminated and inline whitespace runs are replaced with a space.
