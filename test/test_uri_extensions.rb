@@ -1,7 +1,7 @@
 require 'test/unit'
 require File.dirname(__FILE__) + '/../lib/uri_extensions'
 
-class URIExtensionsTest < Test::Unit::TestCase
+class TestURIExtensions < Test::Unit::TestCase
     def test_uri_generic_query_from_hash
         assert_equal '?a=1&b=2', URI::Generic.query_from_hash('a'=>1, 'b'=>2)
 

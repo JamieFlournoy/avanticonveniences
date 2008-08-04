@@ -1,7 +1,7 @@
 require 'test/unit'
 require File.dirname(__FILE__) + '/../lib/arg_checks'
 
-class ArgChecksTest < Test::Unit::TestCase
+class TestArgChecks < Test::Unit::TestCase
   include ArgChecks
 
   def test_arg_type

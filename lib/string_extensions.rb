@@ -1,3 +1,7 @@
+require 'rubygems'
+gem 'activesupport'
+require 'active_support/core_ext/string' # for titleize
+
 class String
     def dehumanize # domo arigato!
         titleize.gsub(/\s/,'').underscore
