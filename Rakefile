@@ -6,6 +6,7 @@ require './lib/avanti_conveniences.rb'
 
 Hoe.new('AvantiConveniences', AvantiConveniences::VERSION) do |p|
   p.developer('Jamie Flournoy', 'jamie@pervasivecode.com')
+  p.test_globs.push 'test/**/*_test.rb'
 end
 
 # vim: syntax=Ruby
