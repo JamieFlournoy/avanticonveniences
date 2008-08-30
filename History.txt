@@ -1,6 +1,10 @@
+=== 1.0.1 / 2008-08-30
+
+* Changed the output of ArgChecks.arg_type so that it includes the to_s representation of the object itself in the exception message.
+* Added ArgChecks.arg_responds_to.
+
 === 1.0.0 / 2008-08-04
 
 * First release.
 
   * Birthday!
-

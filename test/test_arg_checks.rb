@@ -99,4 +99,15 @@ class TestArgChecks < Test::Unit::TestCase
         assert_raise(ArgumentError){ named_args_required(:foo => 1, :bar => nil) }
     end
 
+  def test_arg_respond_to
+    assert_nothing_raised(ArgumentError) { arg_dummy6(:round, 1.1) }
+    assert_nothing_raised(ArgumentError) { arg_dummy6(:round, Float::EPSILON) }
+    assert_raise(ArgumentError) { arg_dummy6(:round, 'a') }
+    assert_raise(ArgumentError) { arg_dummy6(:round, [0]) }
+    assert_raise(ArgumentError) { arg_dummy6(:round, Object) }
+  end
+
+  def arg_dummy6(arg1, arg2)
+      arg_responds_to arg1, arg2
+  end
 end
