@@ -1,3 +1,7 @@
+=== 1.0.3 / 2008-11-11
+
+* Bug fix for a hang in TextFormatter.hyphenate_word, when given a wprd that contains multiple hyphens.
+
 === 1.0.2 / 2008-09-29
 
 * Made TextFormatter.split_long_words take a fourth optional argument to control insertion of newlines in split text.

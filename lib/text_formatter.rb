@@ -36,14 +36,29 @@ class TextFormatter
     
     # Try to hyphenate a word into chunks just barely short enough to fit within the specified size
     def hyphenate_word(word, size, language_code)
+        # handle pre-hyphenated words, which hyphenate_to balks on
+        hyphenated = word.split(/-/)
+        if hyphenated.size > 1
+            hyphenated.collect!{|w| w.length > size ? self.hyphenate_word(w, size, language_code) : w}
+            hyphenated.flatten!
+            last = hyphenated.pop
+            hyphenated.collect!{|w| w[-1,1].eql?('-') ? w : "#{w}-"}
+            hyphenated.push(last)
+            return hyphenated
+        end
+
         h = TextFormatter.text_hyphenator(language_code)
         hyphenated = h.hyphenate_to(word, size).compact
-        
+
+        loop_limit = word.length
         while (hyphenated.size > 1 && hyphenated.last.length > size) do
             last = hyphenated.pop
             part1, part2 = h.hyphenate_to(last, size).compact
             hyphenated.push(part1)
             hyphenated.push(part2) unless part2.nil?
+
+            loop_limit -= 1
+            break if last.eql?(part1) || (loop_limit < 0)
         end
         return hyphenated
     end
