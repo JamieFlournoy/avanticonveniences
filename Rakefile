@@ -4,10 +4,15 @@ require 'rubygems'
 require 'hoe'
 require './lib/avanti_conveniences.rb'
 
-Hoe.new('AvantiConveniences', AvantiConveniences::VERSION) do |p|
+hoe = Hoe.new('AvantiConveniences', AvantiConveniences::VERSION) do |p|
     p.developer('Jamie Flournoy', 'jamie@pervasivecode.com')
     p.extra_deps = [['activesupport', '>= 1.2.6'], ['text-hyphen', '>= 1.0.0']]
 end
+
+task :gemspec do
+  File.open("#{hoe.name}.gemspec", "w") {|f| f << hoe.spec.to_ruby }
+end
+task :package => :gemspec
 
 
 # The rcov task in this file worked until Hoe was updated; this code keeps the old behavior
