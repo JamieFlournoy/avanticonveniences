@@ -1,7 +1,0 @@
-Autotest.add_hook :initialize do |autotest|
-    ['.svn', '.hg', '.git', '.log'].each { |exception| autotest.add_exception(exception) }
-end
-
-require '/Users/jamieflournoy/autotest/sound/sound'
-Autotest::Sound.sound_app = '/opt/local/bin/mpg321'
-Autotest::Sound.sound_path = "/Users/jamieflournoy/autotest/sound/sound_fx/"
