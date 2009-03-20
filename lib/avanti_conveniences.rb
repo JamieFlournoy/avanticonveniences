@@ -5,5 +5,5 @@ require File.dirname(__FILE__) + '/text_formatter'
 require File.dirname(__FILE__) + '/uri_extensions'
 
 class AvantiConveniences
-  VERSION = '1.0.3'
+  VERSION = '1.0.4'
 end
