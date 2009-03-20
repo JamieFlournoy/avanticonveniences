@@ -1,6 +1,6 @@
 *~
 .DS_Store
-avanti_conveniences.tmproj
+*.tmproj
 coverage/
 doc/
 log/*.log

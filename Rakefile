@@ -9,16 +9,31 @@ Hoe.new('AvantiConveniences', AvantiConveniences::VERSION) do |p|
     p.extra_deps = [['activesupport', '>= 1.2.6'], ['text-hyphen', '>= 1.0.0']]
 end
 
+
+# The rcov task in this file worked until Hoe was updated; this code keeps the old behavior
+# and disables Hoe's rcov task.
+Rake::TaskManager.class_eval do
+  def remove_task(task_name)
+    @tasks.delete(task_name.to_s)
+  end
+end
+def remove_task(task_name)
+  Rake.application.remove_task(task_name)
+end
+remove_task 'rcov'
+
+
 task :rcov do
     sh 'rcov test/test_*.rb'
 end
-
 task :clean_rcov do
     sh 'rm -rf ./coverage/*'
 end
 task :clean => [:clean_rcov]
 
+
 # vim: syntax=Ruby
+
 
 # stats
 begin

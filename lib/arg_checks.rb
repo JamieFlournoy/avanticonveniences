@@ -2,13 +2,14 @@
 # If any of these checks is not satisfied, it will raise an ArgumentError with a
 # detailed message about what went wrong.
 module ArgChecks
-    # Require that all arguments be of the specified class, or one of its subclasses.
+    # Require that all arguments be of the specified class, or one of its subclasses (uses is_a?).
     # Consider using arg_responds_to? or respond_to? instead, to make your API more flexible.
     def arg_type(klass, *args)
         raise ArgumentError, "First argument must be a class. Got #{klass.to_s}" unless klass.is_a? Class
         args.each{|obj| raise ArgumentError, "Wrong type for argument '#{obj}' (should be #{klass})" unless obj.is_a? klass }
     end
   
+    # Require that all arguments respond_to? the specified method.
     def arg_responds_to(method, *args)
         arg_type Symbol, method
         args.each{|obj| raise ArgumentError, "Object #{obj} (class #{obj.class}) doesn't respond to #{method}." unless obj.respond_to? method}

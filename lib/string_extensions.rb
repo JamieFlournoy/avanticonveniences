@@ -1,6 +1,6 @@
 require 'rubygems'
 gem 'activesupport', '>= 1.2.6'
-require 'active_support/core_ext/string' # for titleize
+require 'active_support' # for titleize
 
 class String
     # Convert a string consisting of whitespace separated words into an underscore-delimited
