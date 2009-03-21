@@ -37,7 +37,11 @@ Ruby 1.8.5 (might work with earlier versions), ActiveSupport 1.2.6, Text-Hyphen
 
 == INSTALL:
 
-sudo gem install AvantiConveniences
+If you haven't done this before: 
+  gem sources -a http://gems.github.com
+
+Then: 
+  sudo gem install JamieFlournoy-AvantiConveniences
 
 == LICENSE:
 
