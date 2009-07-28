@@ -13,7 +13,8 @@ ArgChecks helps you implement simple sanity-checking of arguments, like
 permanent assertions or a poor man's Design by Contract facility, so you can
 write code that will Fail Fast (see http://c2.com/cgi/wiki?FailFast).
 
-HashExtensions currently just adds the Hash#rekey method.
+HashExtensions adds a few methods that help you easily replace all the keys
+and/or values at once.
 
 StringExtensions provides String quoting (not escaping) with single quotes,
 double quotes, or a caller-specified quoting character, and a String#dehumanize
