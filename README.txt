@@ -13,6 +13,13 @@ ArgChecks helps you implement simple sanity-checking of arguments, like
 permanent assertions or a poor man's Design by Contract facility, so you can
 write code that will Fail Fast (see http://c2.com/cgi/wiki?FailFast).
 
+ArrayExtensions adds Array#average.
+
+Die adds Die.roll which is semantic sugar around rand(n).
+
+FloatExtensions adds Float::INFINITY, which is semantic sugar for people
+who don't want to see '1.0 / 0' in your code.
+
 HashExtensions adds a few methods that help you easily replace all the keys
 and/or values at once.
 
@@ -21,6 +28,9 @@ double quotes, or a caller-specified quoting character, and a String#dehumanize
 method to do the reverse of the String#humanize method provided by ActiveSupport.
 
 TextFormatter provides methods for hyphenating words for word-wrapping.
+
+TimeExtensions provides Time#at_midnight, which is useful if you want to work
+with a lot of timestamps that need to be bucketed by day.
 
 URIExtensions provides URI::Generic#query_from_hash, which will create a URI
 query string from a Hash.

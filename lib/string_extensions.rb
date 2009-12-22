@@ -8,7 +8,7 @@ class String
     # method docs.
     # Example: 'Foo Bar' -> 'foo_bar'
     def dehumanize
-        titleize.gsub(/\s/,'').underscore
+        titleize.gsub(/\W+/,'_').gsub(/\s+/,'_').gsub(/^_+|_+$/,'').underscore
     end
 
     # Return this string, surrounded by quote_char on either side.
@@ -21,4 +21,5 @@ class String
     
     # Return this string, surrounded by a double quote (") on either side.
     def double_quote; self.quote('"'); end
+
 end

@@ -1,3 +1,8 @@
+=== 1.0.6 / 2009-12-22
+
+* Added Array.average, Die.roll, Float::INFINITY, Time.at_midnight
+* Updated to use Hoe 2.0.
+
 === 1.0.5 / 2009-07-27
 
 * Added Hash#map_keys, Hash#map_values, and Hash#map_pairs.

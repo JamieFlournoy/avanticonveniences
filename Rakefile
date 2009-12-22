@@ -2,11 +2,14 @@
 
 require 'rubygems'
 require 'hoe'
-require './lib/avanti_conveniences.rb'
 
-hoe = Hoe.new('AvantiConveniences', AvantiConveniences::VERSION) do |p|
-    p.developer('Jamie Flournoy', 'jamie@pervasivecode.com')
-    p.extra_deps = [['activesupport', '>= 1.2.6'], ['text-hyphen', '>= 1.0.0']]
+# Hoe::plugin :gemcutter
+
+hoe = Hoe.spec 'AvantiConveniences' do
+    developer('Jamie Flournoy', 'jamie@pervasivecode.com')
+    extra_deps << ['activesupport', '>= 1.2.6']
+    extra_deps << ['text-hyphen', '>= 1.0.0']
+    extra_deps << ['thoughtbot-shoulda', '>= 2.10.1']
 end
 
 task :gemspec do
