@@ -9,7 +9,7 @@ hoe = Hoe.spec 'AvantiConveniences' do
     developer('Jamie Flournoy', 'jamie@pervasivecode.com')
     extra_deps << ['activesupport', '>= 1.2.6']
     extra_deps << ['text-hyphen', '>= 1.0.0']
-    extra_deps << ['thoughtbot-shoulda', '>= 2.10.1']
+    extra_dev_deps << ['thoughtbot-shoulda', '>= 2.10.1']
 end
 
 task :gemspec do
