@@ -9,5 +9,5 @@ require File.dirname(__FILE__) + '/time_extensions'
 require File.dirname(__FILE__) + '/uri_extensions'
 
 class AvantiConveniences
-  VERSION = '1.0.6'
+  VERSION = '1.0.7'
 end

@@ -1,3 +1,6 @@
+=== 1.0.7 / 2009-12-28
+* Bug fix in Hash#map_keys, Hash#map_values, and Hash#map_pairs when handling keys or values that are arrays.
+
 === 1.0.6 / 2009-12-22
 
 * Added Array#average, Die.roll, Float::INFINITY, Time#at_midnight
